@@ -1,0 +1,134 @@
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* TIPOGRAFIAS */
+
+.alike { font-family: 'Alike', serif; }
+.bodoni { font-family: 'Bodoni Moda', serif; }
+.comforta { font-family: 'Comfortaa', cursive; }
+.great{font-family: 'Great Vibes', cursive;}
+.lora { font-family: 'Lora', serif; }
+.mrdafoe { font-family: 'Mr Dafoe', cursive; }
+.poppins { font-family: 'Poppins', sans-serif; }
+.roboto { font-family: 'Roboto', sans-serif; }
+.yeseva { font-family: 'Yeseva One', cursive; }
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* MENU */
+
+.overlay { height: 100%; width: 0; position: fixed; z-index: 3; left: 0; top: 0; background-color: #f5f3f2; overflow-x: hidden; transition: 0.5s; }
+.overlay-content { position: relative; top: 4%; width: 100%; text-align: center; margin-top: 0px; }
+.overlay a { padding: 0px 8px; text-decoration: none; font-size: 18px; color: #84796c; display: block; transition: 0.3s; }
+.overlay a:hover, .overlay a:focus { color: #2e2820; }
+.overlay h2, .overlay h2 a{color:#01bab5; font-size: 20px;}
+.overlay h2 a:hover{color:#017773;}
+.overlay .closebtn { position: absolute; top: 20px; right: 45px; font-size: 60px; }
+.menuIcon{ cursor: pointer; position: absolute; top: 9%; left: 7px; z-index: 2; color: #9d8d7d;}
+.cerrarMenu { text-align: right; margin-right: 15px; margin-bottom: 15px; }
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* IMAGENES DE COLECCIÓN */
+
+.portafolioWrap { overflow: hidden; position: relative; }
+.interactive { position: relative; bottom: 0px; }
+.interactive:hover .mensage,
+.interactive:hover .mcotizar { opacity: 1; bottom: 0px; }
+.img { display: block; max-width: 100%; width: 100%; height: auto; }
+.mensage,.mcotizar { position: absolute; bottom: -60px; background: rgb(65, 57, 50); background: rgba(58, 52, 47, 0.788); color: #f1f1f1; width: 100%; transition: .5s ease;
+  opacity: 0; color: white; font-size: 20px; text-align: center; padding: 20px; }
+.mcotizar { background: rgb(255, 255, 255); background: rgba(255, 255, 255, 0.788); color: #9d8d7d; }
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+body { color: #84796c; }
+a { text-decoration: none; color: #84796c; }
+a:hover{color: #01bab5;}
+::placeholder { color: #9d8d7d !important; opacity: 1; } /* Firefox */
+:-ms-input-placeholder { color: #9d8d7d !important; } /* Internet Explorer 10-11 */
+::-ms-input-placeholder { color: #9d8d7d !important; } /* Microsoft Edge */
+.banner{background-image: url("../imgs/portada/bnnr_portada.jpg");height:600px;background-position: top center;background-repeat: no-repeat;background-size: cover;}
+.ls{letter-spacing: 5px;}
+.fs{font-size:5vw;}
+.f-size{font-size:10px;}
+.azult { color:#01bab5; }
+a.azult:hover { color: #84796c; }
+.imagenText, .hudson{color:#fff;position:relative;}
+.imagenText h3, .hudson h3 { position: absolute; font-size: 10vw; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.imagenText h3 span, .hudson h3 span { font-size: 6vw;}
+.hudson h3{font-size: 5vw;}
+.hudson h3 span { font-size: 3vw;}
+#disenioYFabricacion h3{position: absolute;left:5%;color:#fff;font-size: 3vw;}
+#disenioYFabricacion h3:nth-child(2) { top: 15%; }
+#disenioYFabricacion h3:nth-child(3) { top: 30%; }
+#disenioYFabricacion h3:nth-child(4) { top: 45%; }
+.footer { border-top: #c1bcb5 1px solid; background-color: #f1eeeb; }
+.borde { border-bottom: #75695b 1px solid; }
+.nature{font-size: 3vw;}
+.inspiration{font-size: 3vw;}
+.living{font-size: 3vw !important;}
+
+.sticky {position: fixed; top: 0; z-index:2; }
+.sticky .menuIcon{top:38%;}
+.sticky img{width:120px; }
+
+.fondoGris{background-color: #f8f6f5;}
+
+.grid{margin: 0 auto; width: 90%;}
+.grid-item { width: 20%; margin-bottom: 10px;}
+.puntero{cursor:pointer;}
+.bordeTop{ border-top: #c1bcb5 1px solid; }
+.bordeTopBottom{ border-top: #c1bcb5 1px solid; border-bottom: #c1bcb5 1px solid; }
+textarea{resize:none;}
+.form-control, .cantidad,.form-select { border-radius: 0rem !important; border-color: #9d8d7d; color: #9d8d7d;}
+.btn-amsala { border-radius: 0rem !important; color: #9d8d7d; border-color: #9d8d7d; }
+.btn-amsala:hover { color: #fff; background-color: #9d8d7d; border-color: #9d8d7d; }
+.cajaCantidad { width: 43px; border:#9d8d7d 1px solid; border-radius: 0rem !important; border-color: #9d8d7d; color: #9d8d7d;
+  padding: 3px 0px; text-align: center; }
+.cajaCantidad:focus ,.bordeSeleccion{ color: #212529; background-color: #fff; border-color: #86b7fe; outline: 0; box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%); }
+.ptop-6{padding-top:6px;}
+.botones{ width: 18px; border:none; border-radius: 0rem !important; border-color: #9d8d7d; color: #9d8d7d;
+    padding: 3px 0px; text-align: center;background-color: rgba(255, 255, 255, 0); }
+ul.striped-list>li:nth-of-type(even) {
+  background-color: #f8f6f5;
+}
+.fixedDetalle{position: fixed;bottom:0px;right: 0px;}
+.DetalleAbajo{position: relative;}
+.posicionarAbajo{position: absolute;bottom: 0px;}
+.alertaCotizacion1{position: relative;}
+.del{width: 12px;cursor:pointer;margin-top:12px;}
+.selectColor{ width: 50px; height: 30px; }
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+  .imagenText h3 { font-size: 5vw; }
+  .imagenText h3 span { font-size: 3vw; }
+  .nature { font-size: 3vw; }
+  .inspiration { font-size: 2vw; }
+  .living { font-size: 2.5vw !important; }
+  .menuIcon{top: 9%; left: 18px;}
+}
+
+@media (min-width: 992px) {
+  .fs { font-size: 3vw; }
+  .menuIcon{ top: 9%; left: 36px;}
+}
+
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 1400px) {
+}

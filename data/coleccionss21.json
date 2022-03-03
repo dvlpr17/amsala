@@ -1,0 +1,16 @@
+[
+  { "id":1, "nombre": "CUSHIE", "composicion": "Sublimado / 100% Poliéster", "colores":{"1":"#f1eed2","2":"#8e8d8d"},"imagen":"imgs/coleccion_ss21/cushie.jpg","medidas":{"1":"50 x 50 cm","2":"60 x 60 cm"},"desc":"Funda de cojín confeccionada en lino lavado de color liso decorado"},
+  { "id":2, "nombre": "MADAGASCAR", "composicion": "Sublimado / 100% Poliéster", "colores":{"1":"unico"},"imagen":"imgs/coleccion_ss21/madagascar.jpg","medidas":{"1":"50 x 50 cm"},"desc":"Funda de cojín confeccionada en lino lavado de color liso decorado"},
+  { "id":3, "nombre": "REVELLO", "composicion": "Sublimado / 100% Poliéster", "colores":{"1":"#5c3228","2":"#ebc6c1","3":"#808080","4":"#69263a","5":"#3f6c71","6":"#000"},"imagen":"imgs/coleccion_ss21/madagascar_ravello.jpg","medidas":{"1":"45 x 45 cm","2":"55 x 35 cm","3":"50 x 50 cm","4":"60 x 60 cm"},"desc":"Funda de cojín confeccionada en lino lavado de color liso decorado"},
+  { "id":4, "nombre": "MALAUI", "composicion": "Sublimado / 100% Poliéster", "colores":{"1":"unico"},"imagen":"imgs/coleccion_ss21/malaui.jpg","medidas":{"1":"50 x 50 cm"},"desc":"Funda de cojín confeccionada en lino lavado de color liso decorado"},
+  { "id":5, "nombre": "MERAKI", "composicion": "Sublimado / 100% Poliéster", "colores":{"1":"unico"},"imagen":"imgs/coleccion_ss21/meraki.jpg","medidas":{"1":"50 x 50 cm"},"desc":"Funda de cojín confeccionada en lino lavado de color liso decorado"},
+  { "id":6, "nombre": "NAHUA", "composicion": "Sublimado / 100% Poliéster", "colores":{"1":"unico"},"imagen":"imgs/coleccion_ss21/nahua.jpg","medidas":{"1":"50 x 50 cm"},"desc":"Funda de cojín confeccionada en lino lavado de color liso decorado"},
+  { "id":7, "nombre": "PAPALOTE", "composicion": "Sublimado / 100% Poliéster", "colores":{"1":"#bec8cf","2":"#f1eed2"},"imagen":"imgs/coleccion_ss21/papalote.jpg","medidas":{"1":"50 x 50 cm"},"desc":"Funda de cojín confeccionada en lino lavado de color liso decorado"},
+  { "id":8, "nombre": "SASHA", "composicion": "Sublimado / 100% Poliéster", "colores":{"1":"#808080","2":"#395158"},"imagen":"imgs/coleccion_ss21/sasha.jpg","medidas":{"1":"50 x 50 cm"},"desc":"Funda de cojín confeccionada en lino lavado de color liso decorado"},
+  { "id":9, "nombre": "SHAWI", "composicion": "Sublimado / 100% Poliéster", "colores":{"1":"unico"},"imagen":"imgs/coleccion_ss21/shawi.jpg","medidas":{"1":"45 x 45 cm","2":"55 x 35 cm","3":"50 x 50 cm","4":"60 x 60 cm"},"desc":"Funda de cojín confeccionada en lino lavado de color liso decorado"},
+  { "id":10, "nombre": "TRENTO", "composicion": "Sublimado / 100% Poliéster","imagen":"imgs/coleccion_ss21/trento.jpg","colores":{"1":"#f1eed2","2":"#8e8d8d"},"medidas":{"1":"45 x 45 cm","2":"55 x 35 cm","3":"50 x 50 cm","4":"60 x 60 cm"},"desc":"Funda de cojín confeccionada en lino lavado de color liso decorado"},
+  { "id":11, "nombre": "XICALLI", "composicion": "Sublimado / 100% Poliéster", "colores":{"1":"#f1eed2","2":"#8e8d8d"},"imagen":"imgs/coleccion_ss21/xicalli.jpg","medidas":{"1":"55 x 35 cm","2":"60 x 60 cm"},"desc":"Funda de cojín confeccionada en lino lavado de color liso decorado"},
+  { "id":12, "nombre": "YELEPA", "composicion": "Sublimado / 100% Poliéster", "colores":{"1":"unico"},"imagen":"imgs/coleccion_ss21/yelepa.jpg","medidas":{"1":"55 x 35 cm"},"desc":"Funda de cojín confeccionada en lino lavado de color liso decorado"}
+]
+
+

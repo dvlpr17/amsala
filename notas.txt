@@ -1,0 +1,6 @@
+La página va a ser a medida por el detalle del cotizador
+
+Librerias Manzori
+=====================
+https://isotope.metafizzy.co/layout-modes/masonry.html
+https://packery.metafizzy.co/
