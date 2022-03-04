@@ -10,7 +10,6 @@ class Conexion
     private function __construct()
     {
         try {
-            // $this->dbh = new PDO('mysql:host=localhost;dbname=unogas_website', 'unogas_dobleerre', 'Nhj2WSfHEpRw9DhS');
             $this->dbh = new PDO('mysql:host=localhost;dbname=amsala_productos', 'root', '');
             $this->dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->dbh->exec("SET CHARACTER SET utf8");
