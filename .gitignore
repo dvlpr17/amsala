@@ -1,5 +1,5 @@
 $ cat .gitignore
-admin/actividades sistema.xlxs
+admin/actividades sistema.xlsx
 pages/test.html
 imgs/*
 notas.txt
