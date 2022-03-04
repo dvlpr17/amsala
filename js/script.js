@@ -141,3 +141,42 @@ Array.prototype.slice.call(forms)
     }, false)
     })
 })()    
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// CARGAR COLECCIONES EN EL MENU
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$(function () {
+    let text = window.location.pathname;
+    let position = text.search("pages");
+    let urlDeLasColecciones = "";
+    if(position == -1){
+        urlDeLasColecciones = 'data/colecciones.php';
+    }else{
+        urlDeLasColecciones = '../data/colecciones.php';
+    }
+
+
+    $.ajax({
+        dataType: "html",
+        type: "POST",
+        url: urlDeLasColecciones,
+        //data: { "prodAEliminar": $("#ElId").val(), "imagenes": $("#imgsAComparar").val() },
+        success: function (datos) {
+            const obj = JSON.parse(datos);
+            // m(obj);
+            $("#myNav > .overlay-content:eq(0)").html("<h2>COLLECTIONS</h2>");
+            for (let index = 0; index < obj.length; index++) {
+                // m(obj[index].nombrecole);
+                if(position == -1){
+                    $("#myNav > .overlay-content:eq(0)").append('<a href="pages/coleccion.html?prod=' + obj[index].id + '">' + obj[index].nombrecole+'</a>');
+                }else{
+                    $("#myNav > .overlay-content:eq(0)").append('<a href="coleccion.html?prod=' + obj[index].id + '">' + obj[index].nombrecole+'</a>');
+                }
+            }
+            // window.location = "admin.php";
+        }
+        
+    });
+
+});

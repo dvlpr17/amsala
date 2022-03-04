@@ -170,7 +170,7 @@ class Productos
 //SELECT productos.nombre,colecciones.nombrecole FROM (`productos`) LEFT JOIN (`relacoleprod`,`colecciones`) ON (relacoleprod.idCole = colecciones.id AND productos.id = relacoleprod.idProd ) WHERE colecciones.id = 7;
 
         try {
-            $query = $this->dbh->prepare("SELECT nombre, composicion, colores, imagen, medidas, de FROM (productos) LEFT JOIN (relacoleprod,colecciones) ON (relacoleprod.idCole = colecciones.id AND productos.id = relacoleprod.idProd ) WHERE colecciones.id = ?");
+            $query = $this->dbh->prepare("SELECT productos.id, productos.nombre, productos.composicion, productos.colores, productos.imagen, productos.medidas, productos.de FROM (productos) LEFT JOIN (relacoleprod,colecciones) ON (relacoleprod.idCole = colecciones.id AND productos.id = relacoleprod.idProd ) WHERE colecciones.id = ?");
             $query->bindParam(1,$id);
             $query->execute();
             return $query->fetchAll(PDO::FETCH_ASSOC);

@@ -9,6 +9,10 @@ if(isset($_GET['id'])) {
 
 }
 
+/*
+//----------------------------------------------------------
+// REGRESA LAS TODAS LAS COLECCIONES
+//----------------------------------------------------------
 echo "<br><br>";
 require_once '../admin/clases/colecciones.php';
 $cole = Colecciones::singleton_Colecciones();
@@ -16,3 +20,4 @@ $res = $cole->get_colecciones();
 for($i=0;$i<count($res);$i++){
     echo '<a href="?id='.$res[$i]['id'].'">'.$res[$i]['nombrecole'].'</a><br>';
 }
+*/

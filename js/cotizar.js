@@ -1,5 +1,13 @@
+
+
+/*
+FALTA MODIFICAR ESTE ARCHIVO
+
+*/
+
+
 let colorUnico = "";
-$(document).ready(function () {
+$(function () {
 
     if (QueryString.prod){
         cascaron = '<div class="row my-5">';
