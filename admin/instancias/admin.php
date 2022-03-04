@@ -59,7 +59,7 @@ $lasColecciones = $colecciones->get_colecciones();
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="#" class="nav-link px-2 text-white" data-bs-toggle="modal" data-bs-target="#modal" >Agregar producto</a></li>
-          <li><a href="#" class="nav-link px-2 text-white" data-bs-toggle="modal" data-bs-target="#AgregarColeccion">Agregar colección</a></li>
+          <li><a href="#" class="nav-link px-2 text-white" data-bs-toggle="modal" data-bs-target="#AgregarColeccion">Admin colecciones</a></li>
         </ul>
 
 

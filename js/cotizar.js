@@ -1,74 +1,81 @@
 
 
-/*
-FALTA MODIFICAR ESTE ARCHIVO
-
-*/
 
 
 let colorUnico = "";
 $(function () {
 
-    if (QueryString.prod){
-        cascaron = '<div class="row my-5">';
-        LaUrl = "../data/"+QueryString.lista+".json";
-        $.getJSON(LaUrl, function (data) {
-            $.each(data, function (key, val) {
-                if (val.id == QueryString.prod){
-                    cascaron += '<div id="LasFotos" class="col-lg-6">'+
-                        '<img class="w-100" src="../' + val.imagen + '" alt="' + val.nombre+'">' +
-                        '<img class="w-100" src="../' + val.imagen + '" alt="' + val.nombre+'">' +
-                    '</div>' +
-                    '<div id="LaInformacion" class="col-lg-6"><div id="LaInfo">' +
-                    '<h2 id="nombre" class="comforta mt-lg-0 mt-5">'+val.nombre+'</h2>' +
-                        '<p>' + val.desc + '</p>';
+    $.ajax({
+        dataType: "html",
+        type: "GET",
+        url: "../data/producto.php",
+        data: { "id": QueryString.idProd },
+        success: function (d) {
+            const obj = JSON.parse(d);
+            if (obj.length > 0) {
+                cascaron = '<div class="row my-5">';
+                cascaron += '<div id="LasFotos" class="col-lg-6">';
+                imagenesProd = obj[0].imagen.split(",");
+                for (let index = 0; index < imagenesProd.length; index++) {
+                    cascaron += '<img class="w-100" src="' + imagenesProd[index].replace("../../", "../") + '" alt="' + QueryString.nombre + '_' + index + '">';
+                }
+                
+                cascaron += '</div><div id="LaInformacion" class="col-lg-6"><div id="LaInfo">' +
+                    '<h2 id="nombre" class="comforta mt-lg-0 mt-5">' + obj[0].nombre +'</h2>' +
+                    '<p>' + obj[0].de + '</p>';
 
-                    // color = 1;
-                    $.each(val.colores, function (key1, val1) {
-                        if(val1 == "unico"){
-                            colorUnico = "unico";
-                        }else{
-                            cascaron += '<div class="color d-inline-block p-3 me-2" elcolor="'+val1+'" style="background-color:' + val1 + '"></div>';
-                        }
-                    });
-                    
+                arrayColores = obj[0].colores.split(",");
+                if (arrayColores.length > 1) {
+                    for (let c = 0; c < arrayColores.length; c++) {
+                        cascaron += '<div class="color d-inline-block p-3 me-2" elcolor="' + arrayColores[c] + '" style="background-color:' + arrayColores[c] + '"></div>';
+                    }
+                }
 
-                    cascaron += '<h5 class="borde comforta mt-4">MEDIDAS</h5>' +
-                    '<ul class="list-unstyled striped-list">';
+                cascaron += '<h5 class="borde comforta mt-4">MEDIDAS</h5>' +
+                '<ul class="list-unstyled striped-list">';
 
-                    $.each(val.medidas, function (key2, val2) {
+                arrayMedidas = obj[0].medidas.split(",");
+                if (arrayMedidas.length > 1) {
+                    for (let m = 0; m < arrayMedidas.length; m++) {
                         cascaron += '<li class="d-flex justify-content-between px-3 py-1">' +
-                        '<span class="ptop-6">'+ val2 +'</span>' +
+                        '<span class="ptop-6">' + arrayMedidas[m] +'</span>' +
                         '<div class="LasMedidas">' +
                         '<button class="botones menos">-</button>' +
                         '<input type="text" class="cajaCantidad" value="0">' +
                         '<button class="botones mas">+</button>' +
                         '</div>' +
                         '</li>';
-                    });
-
-                    cascaron += '</ul><h5 class="borde comforta mt-4">COMPOSICIÓN</h5>' +
-                    '<p>' + val.composicion+'</p>' +
-                    '<h5 class="borde comforta mt-4">CUIDADO</h4>' +
-                    '<ul class="list-unstyled mb-5 alertaCotizacion1">' +
-                    '<li> <span class="icon-cares-6"></span> LAVAR A MAQUINA MAX. 30°C. CENTRIFUGADO CORTO</li>' +
-                    '<li class="pt-3"> <span class="icon-cares-14"></span> NO USAR LEJÍA / BLANQUEADOR</li>' +
-                    '<li class="pt-3"> <span class="icon-cares-17"></span> PLANCHAR MAXIMO 110 ° C</li>' +
-                    '<li class="pt-3"> <span class="icon-cares-28"></span> NO USAR SECADORA</li>' +
-                    '</ul>' +
-                        '<button type="submit" elid="'+val.id+'" class="agregar btn btn-amsala mb-3 px-5" >AGREGAR A COTIZACIÓN</button> ' +
-                    '<button id="ver" type="submit" class="btn btn-amsala mb-3 px-5">VER COTIZACIÓN</button>' +
-                    '</div></div>';
-
+                    }
                 }
-            });
-            cascaron += '</div>' 
-            $("#DatosProducto").prepend(cascaron);
-        });
 
-    }else{
-        $("#DatosProducto").prepend("<h1 class='text-center'>No hay Producto</h1>");
-    }
+                cascaron += '</ul><h5 class="borde comforta mt-4">COMPOSICIÓN</h5>' +
+                '<p>' + obj[0].composicion+'</p>' +
+                '<h5 class="borde comforta mt-4">CUIDADO</h4>' +
+                '<ul class="list-unstyled mb-5 alertaCotizacion1">' +
+                '<li> <span class="icon-cares-6"></span> LAVAR A MAQUINA MAX. 30°C. CENTRIFUGADO CORTO</li>' +
+                '<li class="pt-3"> <span class="icon-cares-14"></span> NO USAR LEJÍA / BLANQUEADOR</li>' +
+                '<li class="pt-3"> <span class="icon-cares-17"></span> PLANCHAR MAXIMO 110 ° C</li>' +
+                '<li class="pt-3"> <span class="icon-cares-28"></span> NO USAR SECADORA</li>' +
+                '</ul>' +
+                '<button type="submit" elid="' + obj[0].idProd+'" class="agregar btn btn-amsala mb-3 px-5" >AGREGAR A COTIZACIÓN</button> ' +
+                '<button id="ver" type="submit" class="btn btn-amsala mb-3 px-5">VER COTIZACIÓN</button>' +
+                '</div></div>';
+
+
+                cascaron += '</div>' ;
+                $("#DatosProducto").prepend(cascaron);
+
+            }else{
+                $("#DatosProducto").prepend("<h1 class='text-center'>No hay Producto</h1>");
+            }
+        }
+    });
+
+            
+
+
+
+    
 
     //-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
     //  BOTONES MAS MENOS PARA LA CANTIDAD
