@@ -1,9 +1,6 @@
 $ cat .gitignore
-
 admin/actividades sistema.xlxs
-
 pages/test.html
-
 imgs/*
-
 notas.txt
+archivo.txt
