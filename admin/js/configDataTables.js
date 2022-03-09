@@ -41,10 +41,12 @@ $(document).ready(function () {
         "columnDefs": [{
             targets: 3,
             createdCell: function (td, cellData, rowData, row, col) {
-                res = rowData[3].split(",");
-                $(td).html("");
-                for (var col = 0; col < res.length; col++) {
-                    $(td).append('<div class="color d-inline-block p-3 me-2" elcolor="' + res[col] + '" style="background-color:' + res[col] + ';"></div>');
+                if(rowData[3].length > 0){
+                    res = rowData[3].split(",");
+                    $(td).html("");
+                    for (var col = 0; col < res.length; col++) {
+                        $(td).append('<div class="color d-inline-block p-3 me-2" elcolor="' + res[col] + '" style="background-color:' + res[col] + ';"></div>');
+                    }
                 }
 
             }
