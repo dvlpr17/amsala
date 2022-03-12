@@ -17,7 +17,7 @@ $(function () {
                 cascaron += '<div id="LasFotos" class="col-lg-6">';
                 imagenesProd = obj[0].imagen.split(",");
                 for (let index = 0; index < imagenesProd.length; index++) {
-                    cascaron += '<img class="w-100" src="' + imagenesProd[index].replace("../../", "../") + '" alt="' + QueryString.nombre + '_' + index + '">';
+                    cascaron += '<img class="w-100" src="' + imagenesProd[index].replace("../../", "../") + '" alt="' + obj[0].nombre + '">';
                 }
                 
                 cascaron += '</div><div id="LaInformacion" class="col-lg-6"><div id="LaInfo">' +
@@ -57,7 +57,7 @@ $(function () {
                 '<li class="pt-3"> <span class="icon-cares-17"></span> PLANCHAR MAXIMO 110 ° C</li>' +
                 '<li class="pt-3"> <span class="icon-cares-28"></span> NO USAR SECADORA</li>' +
                 '</ul>' +
-                '<button type="submit" elid="' + obj[0].idProd+'" class="agregar btn btn-amsala mb-3 px-5" >AGREGAR A COTIZACIÓN</button> ' +
+                '<button type="submit" elid="' + obj[0].id+'" class="agregar btn btn-amsala mb-3 px-5" >AGREGAR A COTIZACIÓN</button> ' +
                 '<button id="ver" type="submit" class="btn btn-amsala mb-3 px-5">VER COTIZACIÓN</button>' +
                 '</div></div>';
 
