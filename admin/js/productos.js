@@ -108,13 +108,13 @@ $(function(){
         $("#respaldoColores").val(RespaldoColores);
         
         
-        
         reiniciarChecks();
         
         
         // MEDIDAS
         let datos = $(this).children("td").eq(4).text().split(",");
         for (i = 0; i < datos.length; i++) {
+            m(datos[i]);
             caja = $("input[value*='" + datos[i] + "']").parent(".modChecks");
             $("input[value*='" + datos[i] + "']").remove();
             caja.prepend('<input class="form-check-input" type="checkbox" value="'+datos[i]+'" name="respaldoMed[]" checked></input>');
@@ -456,6 +456,8 @@ const lasComas = () => {
 const reiniciarChecks = () =>{
     $(".check1").html("");
     $(".check2").html("");
+    $(".check3").html("");
+    $(".check4").html("");
     $(".detalleFotos").html("");
 
     $(".check1").append('<div class="form-check modChecks"><input class="form-check-input" type="checkbox" value="45 x 45 cm" name="respaldoMed[]" >'+
@@ -468,6 +470,13 @@ const reiniciarChecks = () =>{
     '<div class="form-check modChecks"><input class="form-check-input" type="checkbox" value="60 x 60 cm" name="respaldoMed[]">'+
     '<label class="form-check-label" for="flexCheckChecked"> 60 x 60 cm </label></div>');
     
+    $(".check3").append('<div class="form-check modChecks"><input class="form-check-input" type="checkbox" value="Individual" name="respaldoMed[]" >'+
+        '<label class="form-check-label"> Individual</label></div><div class="form-check modChecks">'+
+        '<input class="form-check-input" type="checkbox" value="Matrimonial" name="respaldoMed[]"><label class="form-check-label"> Matrimonial</label></div>');
+
+    $(".check4").append('<div class="form-check modChecks"><input class= "form-check-input" type = "checkbox" value = "King Size" name = "respaldoMed[]" >'+
+        '<label class="form-check-label"> King Size</label></div >');
+
 }
 
 // ~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-

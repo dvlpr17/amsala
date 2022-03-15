@@ -124,7 +124,7 @@ $lasColecciones = $colecciones->get_colecciones();
 							<div class="col-md-10 mb-3">
 								<label class="form-label"><strong>Medidas</strong></label>
 							</div>
-							<div class="col-md-4 mb-3">
+							<div class="col-md-5 mb-3">
 								<div class="form-check">
 									<input class="form-check-input" type="checkbox" value="45 x 45 cm" name="medida[]">
 									<label class="form-check-label"> 45 x 45 cm </label>
@@ -134,7 +134,7 @@ $lasColecciones = $colecciones->get_colecciones();
 									<label class="form-check-label"> 55 x 35 cm </label>
 								</div>
 							</div>
-							<div class="col-md-4 mb-3">
+							<div class="col-md-5 mb-3">
 								<div class="form-check">
 									<input class="form-check-input" type="checkbox" value="50 x 50 cm" name="medida[]">
 									<label class="form-check-label"> 50 x 50 cm </label>
@@ -143,6 +143,22 @@ $lasColecciones = $colecciones->get_colecciones();
 									<input class="form-check-input" type="checkbox" value="60 x 60 cm" name="medida[]">
 									<label class="form-check-label"> 60 x 60 cm </label>
 								</div>									
+							</div>
+							<div class="col-md-5 mb-3">
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="Individual" name="medida[]">
+									<label class="form-check-label"> Individual</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="Matrimonial" name="medida[]">
+									<label class="form-check-label"> Matrimonial</label>
+								</div>									
+							</div>
+							<div class="col-md-5 mb-3">
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="King Size" name="medida[]">
+									<label class="form-check-label"> King Size</label>
+								</div>
 							</div>
 							<div class="col-md-10 mb-3">
 								<label class="form-label" for="color"><strong>Colores</strong></label>
@@ -309,7 +325,7 @@ $lasColecciones = $colecciones->get_colecciones();
 						<div class="col-md-10">
 							<label class="form-label"><strong>Cambiar las Medidas</strong></label>
 						</div>
-						<div class="col-md-4 mb-3 check1">
+						<div class="col-md-5 mb-3 check1">
 							<div class="form-check modChecks">
 								<input class="form-check-input" type="checkbox" value="45 x 45 cm" name="respaldoMed[]">
 								<label class="form-check-label" for="flexCheckDefault"> 45 x 45 cm </label>
@@ -319,7 +335,7 @@ $lasColecciones = $colecciones->get_colecciones();
 								<label class="form-check-label" for="flexCheckChecked"> 55 x 35 cm </label>
 							</div>									
 						</div>
-						<div class="col-md-4 mb-3 check2">
+						<div class="col-md-5 mb-3 check2">
 							<div class="form-check modChecks">
 								<input class="form-check-input" type="checkbox" value="50 x 50 cm" name="respaldoMed[]">
 								<label class="form-check-label" for="flexCheckDefault"> 50 x 50 cm </label>
@@ -329,6 +345,23 @@ $lasColecciones = $colecciones->get_colecciones();
 								<label class="form-check-label" for="flexCheckChecked"> 60 x 60 cm </label>
 							</div>									
 						</div>
+						<div class="col-md-5 mb-3 check3">
+							<div class="form-check modChecks">
+								<input class="form-check-input" type="checkbox" value="Individual" name="respaldoMed[]">
+								<label class="form-check-label"> Individual</label>
+							</div>
+							<div class="form-check modChecks">
+								<input class="form-check-input" type="checkbox" value="Matrimonial" name="respaldoMed[]">
+								<label class="form-check-label"> Matrimonial</label>
+							</div>									
+						</div>
+						<div class="col-md-5 mb-3 check4">
+							<div class="form-check modChecks">
+								<input class="form-check-input" type="checkbox" value="King Size" name="respaldoMed[]">
+								<label class="form-check-label"> King Size</label>
+							</div>
+						</div>
+						
 						<div class="col-md-10 mb-3">
 							<label class="form-label"><strong>Descripción</strong></label>
 							<textarea class="form-control" id="des" name="des" rows="3"></textarea>
