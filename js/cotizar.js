@@ -34,8 +34,8 @@ $(function () {
                 cascaron += '<h5 class="borde comforta mt-4">MEDIDAS</h5>' +
                 '<ul class="list-unstyled striped-list">';
 
-                arrayMedidas = obj[0].medidas.split(",");
-                if (arrayMedidas.length > 1) {
+                if (obj[0].medidas.length > 0) {
+                    arrayMedidas = obj[0].medidas.split(",");
                     for (let m = 0; m < arrayMedidas.length; m++) {
                         cascaron += '<li class="d-flex justify-content-between px-3 py-1">' +
                         '<span class="ptop-6">' + arrayMedidas[m] +'</span>' +
