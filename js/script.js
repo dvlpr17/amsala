@@ -166,12 +166,15 @@ $(function () {
             const obj = JSON.parse(datos);
             // m(obj);
             $("#myNav > .overlay-content:eq(0)").html("<h2>COLLECTIONS</h2>");
+            $("#menuCollections").html("");
             for (let index = 0; index < obj.length; index++) {
                 // m(obj[index].nombrecole);
                 if(position == -1){
                     $("#myNav > .overlay-content:eq(0)").append('<a href="pages/coleccion.html?prod=' + obj[index].id + '">' + obj[index].nombrecole+'</a>');
+                    $("#menuCollections").append('<li><a href="pages/coleccion.html?prod=' + obj[index].id + '">' + obj[index].nombrecole +'</a></li>');
                 }else{
                     $("#myNav > .overlay-content:eq(0)").append('<a href="coleccion.html?prod=' + obj[index].id + '">' + obj[index].nombrecole+'</a>');
+                    $("#menuCollections").append('<li><a href="pages/coleccion.html?prod=' + obj[index].id + '">' + obj[index].nombrecole +'</a></li>');
                 }
             }
             // window.location = "admin.php";
