@@ -1,6 +1,6 @@
 <?php 
 
-require_once 'send/class.phpmailer.php'; // Envio de correos
+
 
 
 $hoy = date("Y");
@@ -55,29 +55,14 @@ if($_POST['nombre']){
 
 //echo $cuerpoMensaje;
 
-    $asunto = "Amsala Contacto";
-    $mail = new PHPMailer();
-    $mail->CharSet = 'UTF-8';
-    $mail->From = "info@amsala.com.mx";
-    $mail->FromName = 'Amsala';
-    $mail->Subject = "=?UTF-8?B?".base64_encode($asunto)."=?=";
-    $mail->Body = $cuerpoMensaje;
-    $mail->IsHTML(true);
 
+//===========================================
+//https://www.youtube.com/watch?v=J4s9DMzUt3I&ab_channel=AbiramL%C3%B3pez
 
-
-        $recipients = array(
-            // 'web@dobleerre.com' => 'Direccion',
-            'web@dobleerre.com' => 'Diego Arias'
-            // 'oskar@dobleerre.com' => 'Dirección',
-            // 'mkt@dobleerre.com' => 'Diseño'
-        );
-
-        foreach($recipients as $email => $name){
-            $mail->AddAddress($email, $name);
-            $mail->Send();
-            $mail->ClearAddresses();
-        }
+    
+    require_once ("phpmailer/clsMail.php");
+    $mailSend = new clsMail();
+    $enviado =  $mailSend->metEnviar("info@amsala.com.mx",$_POST['nombre'],$_POST['correo'],"Comentarios desde Amsala Web", $cuerpoMensaje);
 
     header("Location: gracias.html");
 

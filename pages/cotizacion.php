@@ -1,5 +1,4 @@
 <?php 
-require_once("send/class.phpmailer.php");
 
 ob_start();
 session_start();
@@ -42,8 +41,6 @@ $salir = "no";
 if(!empty($_POST["v8"])){
     $a = explode(',|,',$_POST["v8"]);
     
-    
-    
     foreach($a as $element){
         $q = [];
         $q = explode(",",$element);
@@ -79,7 +76,7 @@ foreach($w as $ww){
     $q = explode(",",$ww);
     if($q[0] == 1){
         $parteRuta = explode("../",$q[1]);
-        $rutaLimpia = "https://dobleerre.com/amsala/".$parteRuta[1];
+        $rutaLimpia = "https://amsala.com.mx/".$parteRuta[1];
         $cadena2 .='<tr>';
         $cadena2 .='<td width="100" align="center" valign="middle"><img src="'.$rutaLimpia.'" width="100"></td>';
         $cadena2 .='<td width="100" align="center" valign="middle">'.$q[2].'</td>';
@@ -102,9 +99,6 @@ foreach($w as $ww){
 
 
 $cadena2 .='</table>';
-
-
-
 
 
 
@@ -206,18 +200,24 @@ $cadena = '
 //----------------------------------------------------------------------------------
 //  ENVIO DE CORREO
 
-    $mail = new PHPMailer();
-    $mail->CharSet = 'UTF-8';
-    $mail->From = $_POST["v2"];
-    $mail->FromName = $_POST["v1"];
-    $mail->Subject = "Pedidos y cotizaciones";
-    $mail->Body = $cadena;
-    $mail->IsHTML(true);
-    $mail->AddAddress("ventas@amsala.com.mx");
-    // $mail->AddAddress("web@dobleerre.com");
-    $mail->Send();
-    $mail->ClearAddresses();
-    $mail->ClearAttachments();
+    // $mail = new PHPMailer();
+    // $mail->CharSet = 'UTF-8';
+    // $mail->From = $_POST["v2"];
+    // $mail->FromName = $_POST["v1"];
+    // $mail->Subject = "Pedidos y cotizaciones";
+    // $mail->Body = $cadena;
+    // $mail->IsHTML(true);
+    // $mail->AddAddress("ventas@amsala.com.mx");
+    // // $mail->AddAddress("web@dobleerre.com");
+    // $mail->Send();
+    // $mail->ClearAddresses();
+    // $mail->ClearAttachments();
+
+
+    require_once ("phpmailer/clsMail.php");
+    $mailSend = new clsMail();
+    $enviado =  $mailSend->metEnviar("ventas@amsala.com.mx",$_POST["v1"],$_POST['v2'],"Cotización desde la Web Amsala", $cadena);
+
 
 
 

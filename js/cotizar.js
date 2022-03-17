@@ -29,6 +29,8 @@ $(function () {
                     for (let c = 0; c < arrayColores.length; c++) {
                         cascaron += '<div class="color d-inline-block p-3 me-2" elcolor="' + arrayColores[c] + '" style="background-color:' + arrayColores[c] + '"></div>';
                     }
+                }else{
+                    colorUnico = "unico";
                 }
 
                 cascaron += '<h5 class="borde comforta mt-4">MEDIDAS</h5>' +
@@ -197,6 +199,7 @@ $(document).on('click', '#ver', function (event) {
 
 $(document).on('click', '.agregar', function (event) {
     $(".alert-danger").remove();
+    m($(".color.bordeSeleccion").attr("elcolor"));
     if ($(".color.bordeSeleccion").attr("elcolor") != undefined || colorUnico == "unico"){
         if ($(".LasMedidas.bordeSeleccion > .cajaCantidad").val() != undefined){
 
