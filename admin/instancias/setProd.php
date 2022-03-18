@@ -30,9 +30,6 @@ if(!empty($_POST["nombre"])){
     foreach($_FILES["formFile"]['tmp_name'] as $key => $tmp_name) {
         if($_FILES["formFile"]["name"][$key]) {
 
-            $filename = $_FILES["formFile"]["name"][$key]; //Obtenemos el nombre original del archivo
-            $source = $_FILES["formFile"]["tmp_name"][$key]; //Obtenemos un nombre temporal del archivo
-            
 
             // Declaramos un  variable con la ruta donde guardaremos los archivos
             $directorio = '../../imgs/'.$lasPartesParticipantes[1];
@@ -41,9 +38,16 @@ if(!empty($_POST["nombre"])){
             if(!file_exists($directorio)){
                 mkdir($directorio, 0777) or die("No se puede crear el directorio de extracci&oacute;n");    
             }
+
             
+   			$name = basename($_FILES["formFile"]["name"][$key]);
+		    list($base,$extension) = explode('.',$name);
+			$trimmed = strtolower(str_replace(" ","",eliminar_acentos($base)));
+		    $newname = $trimmed.time().'.'.$extension;
+
+
             //Indicamos la ruta de destino, así como el nombre del archivo
-            $target_path = $directorio.'/'.$filename; 
+            $target_path = $directorio.'/'.$newname; 
             if($contadorImagenes > 1){
                 $lasImagenes .= $target_path.",";
             }else{
@@ -51,11 +55,8 @@ if(!empty($_POST["nombre"])){
             }
             $contadorImagenes--;
             
-            //Abrimos el directorio de destino
-            $dir=opendir($directorio); 
+            // Abrimos el directorio de destino
             if ($tmp_name == UPLOAD_ERR_OK) {
-                $tmp_name = $_FILES["formFile"]["tmp_name"][$key];
-                $name = basename($_FILES["formFile"]["name"][$key]);
                 move_uploaded_file($tmp_name, $target_path);
             }
 
@@ -106,4 +107,48 @@ if(!empty($_POST["nombre"])){
 
 }else{
     header("Location: admin.php");
+}
+
+
+function eliminar_acentos($cadena){
+		
+    //Reemplazamos la A y a
+    $cadena = str_replace(
+    array('Á', 'À', 'Â', 'Ä', 'á', 'à', 'ä', 'â', 'ª'),
+    array('A', 'A', 'A', 'A', 'a', 'a', 'a', 'a', 'a'),
+    $cadena
+    );
+
+    //Reemplazamos la E y e
+    $cadena = str_replace(
+    array('É', 'È', 'Ê', 'Ë', 'é', 'è', 'ë', 'ê'),
+    array('E', 'E', 'E', 'E', 'e', 'e', 'e', 'e'),
+    $cadena );
+
+    //Reemplazamos la I y i
+    $cadena = str_replace(
+    array('Í', 'Ì', 'Ï', 'Î', 'í', 'ì', 'ï', 'î'),
+    array('I', 'I', 'I', 'I', 'i', 'i', 'i', 'i'),
+    $cadena );
+
+    //Reemplazamos la O y o
+    $cadena = str_replace(
+    array('Ó', 'Ò', 'Ö', 'Ô', 'ó', 'ò', 'ö', 'ô'),
+    array('O', 'O', 'O', 'O', 'o', 'o', 'o', 'o'),
+    $cadena );
+
+    //Reemplazamos la U y u
+    $cadena = str_replace(
+    array('Ú', 'Ù', 'Û', 'Ü', 'ú', 'ù', 'ü', 'û'),
+    array('U', 'U', 'U', 'U', 'u', 'u', 'u', 'u'),
+    $cadena );
+
+    //Reemplazamos la N, n, C y c
+    $cadena = str_replace(
+    array('Ñ', 'ñ', 'Ç', 'ç'),
+    array('N', 'n', 'C', 'c'),
+    $cadena
+    );
+    
+    return $cadena;
 }
